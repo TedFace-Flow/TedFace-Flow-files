@@ -1,0 +1,16 @@
+{
+  "file": "fixed_orbital_atlas.nii.gz",
+  "description": "Fixed labelled orbital atlas used for all reported inference runs.",
+  "source": "A de-identified development-set CT segmentation mask with an upright head position.",
+  "construction": [
+    "The left orbit was reflected across the sagittal plane with left-right label remapping.",
+    "One erosion iteration was applied to the extraocular-muscle labels.",
+    "The skull, globes, and optic nerves were otherwise unchanged."
+  ],
+  "shape": [512, 512, 128],
+  "spacing_mm": [0.5, 0.5, 1.0],
+  "label_range": [0, 19],
+  "contains_ct_intensities": false,
+  "contains_direct_patient_identifiers": false,
+  "sha256": "94a26695ec796f4f1e62355a4aa2283de6bb9f0c4ca68a97e2eb52bfc38e54ce"
+}

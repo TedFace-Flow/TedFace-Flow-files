@@ -1,0 +1,13 @@
+torch>=2.4
+torchvision>=0.19
+monai>=1.4
+numpy>=1.26
+scipy>=1.11
+pandas>=2.1
+scikit-image>=0.22
+scikit-learn>=1.4
+nibabel>=5.2
+tqdm>=4.66
+tensorboard>=2.15
+Pillow>=10.0
+TotalSegmentator==2.15.0

@@ -1,0 +1,7 @@
+TedFace-Flow
+Copyright 2026 TedFace-Flow contributors
+
+This project includes and adapts components from MONAI and MAISI, which are provided
+under the Apache License 2.0. TotalSegmentator and DINOv2 are separate third-party
+projects distributed under their respective terms. No third-party model weights are
+relicensed by this repository.

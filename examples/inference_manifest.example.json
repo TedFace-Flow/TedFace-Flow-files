@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "anon_id": "EXAMPLE_0001",
+      "image": "data/example_latent.nii.gz",
+      "label": "data/example_mask.nii.gz",
+      "dino_feature_path": "data/example_dinov2_feature.pt",
+      "spacing": [0.5, 0.5, 1.0],
+      "fold": -1,
+      "condition": "TED",
+      "modality": "CT"
+    }
+  ]
+}

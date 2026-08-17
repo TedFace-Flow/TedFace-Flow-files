@@ -1,0 +1,8 @@
+{
+  "trained_autoencoder_path": "models/maisi/autoencoder_v1.pt",
+  "trained_diffusion_path": "models/maisi/diff_unet_3d_rflow-ct.pt",
+  "trained_controlnet_path": "models/tedface_flow_final.pt",
+  "data_base_dir": "",
+  "json_data_list": "examples/inference_manifest.example.json",
+  "modality_mapping_path": "configs/modality_mapping.json"
+}

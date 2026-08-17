@@ -1,0 +1,11 @@
+{
+  "model_dir": "outputs/checkpoints",
+  "output_dir": "outputs",
+  "tfevent_path": "outputs/tensorboard",
+  "trained_diffusion_path": "models/maisi/diff_unet_3d_rflow-ct.pt",
+  "existing_ckpt_filepath": "outputs/checkpoints/tedface_flow_crossmodal_phase1_current.pt",
+  "exp_name": "tedface_flow_crossmodal_phase2",
+  "data_base_dir": "",
+  "json_data_list": "examples/training_manifest.example.json",
+  "modality_mapping_path": "configs/modality_mapping.json"
+}

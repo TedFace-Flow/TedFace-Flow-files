@@ -1,0 +1,82 @@
+{
+    "spatial_dims": 3,
+    "image_channels": 1,
+    "latent_channels": 4,
+    "include_body_region": false,
+    "mask_generation_latent_shape": [
+        4,
+        128,
+        128,
+        32
+    ],
+    "anatomy_list": [
+        "skull", "eyeball_right", "lateral_rectus_right", "superior_oblique_right", 
+        "levator_palpebrae_right", "superior_rectus_right", "medial_rectus_left", 
+        "inferior_oblique_right", "inferior_rectus_right", "optic_nerve_left", 
+        "eyeball_left", "lateral_rectus_left", "superior_oblique_left", 
+        "levator_palpebrae_left", "superior_rectus_left", "medial_rectus_right", 
+        "inferior_oblique_left", "inferior_rectus_left", "optic_nerve_right"
+    ],
+    "num_classes": 19,
+    "use_unlabeled_as_background": true,
+    "autoencoder_def": {
+        "_target_": "monai.apps.generation.maisi.networks.autoencoderkl_maisi.AutoencoderKlMaisi",
+        "spatial_dims": "@spatial_dims",
+        "in_channels": "@image_channels",
+        "out_channels": "@image_channels",
+        "latent_channels": "@latent_channels",
+        "num_channels": [64, 128, 256],
+        "num_res_blocks": [2, 2, 2],
+        "norm_num_groups": 32,
+        "norm_eps": 1e-06,
+        "attention_levels": [false, false, false],
+        "with_encoder_nonlocal_attn": false,
+        "with_decoder_nonlocal_attn": false,
+        "use_checkpointing": false,
+        "use_convtranspose": false,
+        "norm_float16": true,
+        "num_splits": 4,
+        "dim_split": 1
+    },
+    "diffusion_unet_def": {
+        "_target_": "monai.apps.generation.maisi.networks.diffusion_model_unet_maisi.DiffusionModelUNetMaisi",
+        "spatial_dims": "@spatial_dims",
+        "in_channels": "@latent_channels",
+        "out_channels": "@latent_channels",
+        "num_channels": [64, 128, 256, 512],
+        "attention_levels": [false, false, true, true],
+        "num_head_channels": [0, 0, 32, 32],
+        "num_res_blocks": 2,
+        "use_flash_attention": true,
+        "include_top_region_index_input": "@include_body_region",
+        "include_bottom_region_index_input": "@include_body_region",
+        "include_spacing_input": true,
+        "num_class_embeds": 128,
+        "resblock_updown": true,
+        "include_fc": true
+    },
+    "controlnet_def": {
+        "_target_": "monai.apps.generation.maisi.networks.controlnet_maisi.ControlNetMaisi",
+        "spatial_dims": "@spatial_dims",
+        "in_channels": "@latent_channels",
+        "num_channels": [64, 128, 256, 512],
+        "attention_levels": [false, false, true, true],
+        "num_head_channels": [0, 0, 32, 32],
+        "num_res_blocks": 2,
+        "use_flash_attention": true,
+        "conditioning_embedding_in_channels": 8,
+        "conditioning_embedding_num_channels": [8, 32, 64],
+        "num_class_embeds": 128,
+        "resblock_updown": true,
+        "include_fc": true
+    },
+    "mask_generation_scale_factor": 1.0055984258651733,
+    "noise_scheduler": {
+        "_target_": "monai.networks.schedulers.rectified_flow.RFlowScheduler",
+        "num_train_timesteps": 1000,
+        "use_discrete_timesteps": false,
+        "use_timestep_transform": true,
+        "sample_method": "uniform",
+        "scale": 1.4
+    }
+}
