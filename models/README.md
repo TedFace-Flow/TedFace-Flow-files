@@ -11,9 +11,7 @@ models/maisi/autoencoder_v1.pt
 models/maisi/diff_unet_3d_rflow-ct.pt
 ```
 
-`tedface_flow_final.pt` is required for fixed-atlas inference. The orbital-domain
-checkpoint initializes cross-modal phase 1 and is required only when reproducing the
-four-phase training schedule. The MAISI-v2 weights are not redistributed by this
+`tedface_flow_final.pt` is required for fixed-atlas inference. The MAISI-v2 weights are not redistributed by this
 repository; obtain them from their official source and retain the original license and
 attribution.
 
