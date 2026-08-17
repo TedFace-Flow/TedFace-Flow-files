@@ -74,9 +74,9 @@ The manuscript uses two high-level development stages:
 1. Orbital-domain adaptation initializes the generator from CT-mask pairs.
 2. Cross-modal face-conditioning introduces the matched periocular descriptor.
 
-The second stage contains four consecutive 30-epoch phases, for 120 cross-modal
-epochs in total. The final 60 epochs are phases 3 and 4; they are not an additional
-60-epoch refinement after a completed four-phase schedule.
+The initial four-phase schedule comprised 120 cross-modal training epochs.
+It was followed by an additional 60-epoch refinement stage. The released
+checkpoint is the endpoint of this refinement stage.
 
 | Cross-modal phase | Epochs | Initial LR | Mask perturbation | Mask dropout | RSCL-face weight |
 |---|---:|---:|---:|---:|---:|
