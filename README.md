@@ -36,21 +36,16 @@ weights must be obtained separately under their original distribution terms.
 
 ## Model weights
 
-Large checkpoints are GitHub Release assets rather than Git objects. Place the final
-inference checkpoint at:
+The final inference checkpoint used for the reported analyses is available in the
+[TedFace-Flow v1.0.0 release](https://github.com/TedFace-Flow/TedFace-Flow-files/releases/tag/v1.0.0).
+
+- [Download `tedface_flow_final.pt`](https://github.com/TedFace-Flow/TedFace-Flow-files/releases/download/v1.0.0/tedface_flow_final.pt)
+- SHA-256: `153768cb0cb837e8ddccf17e54a6cbe5b1f02c3cb4dff50c0a2c4ee21c10fce7`
+
+After downloading, place the checkpoint at:
 
 ```text
 models/tedface_flow_final.pt
-```
-
-The released inference checkpoint contains only `controlnet_state_dict` and
-`face_adapter_state_dict`; it contains no epoch, loss tensor, optimizer state,
-institutional path, or patient information.
-
-```text
-tedface_flow_final.pt
-SHA-256: 153768cb0cb837e8ddccf17e54a6cbe5b1f02c3cb4dff50c0a2c4ee21c10fce7
-```
 
 ## Facial descriptors
 
