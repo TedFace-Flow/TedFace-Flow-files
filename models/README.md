@@ -7,7 +7,6 @@ Expected local files:
 
 ```text
 models/tedface_flow_final.pt
-models/tedface_flow_orbital_domain.pt
 models/maisi/autoencoder_v1.pt
 models/maisi/diff_unet_3d_rflow-ct.pt
 ```
